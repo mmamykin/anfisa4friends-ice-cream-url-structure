@@ -1,12 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse(
-        'Ты <i>не можешь</i> получить правильные <b>ответы</b>,<br> '
-        'если у тебя нет правильных <s>вопросов</s> запросов.'
-    ) 
-
+    template = 'ice_cream/index.html'
+    return render(request, template) 
 
 def ice_cream_list(request):
     return HttpResponse('Список мороженого')
